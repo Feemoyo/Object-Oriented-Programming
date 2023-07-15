@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 17:34:20 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/15 15:11:56 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/07/09 18:25:51 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/07/09 18:47:23 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-Zombie*  newZombie( std::string name)
+#include <iostream>
+
+class   Contact
 {
-    Zombie* constructor = new Zombie(name);
-    return constructor;
-}
+    public:
+        
+        
+    private:
+        std::string _firstName;
+        std::string _lastName;
+        std::string _nickName;
+        std::string _phoneNumber;
+        std::string _darkestSecret;
+};
+
+#endif

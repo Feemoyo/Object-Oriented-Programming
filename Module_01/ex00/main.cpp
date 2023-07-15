@@ -6,18 +6,47 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:50:40 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/12 17:05:27 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:47:47 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
+bool testRawZombieClass(void)
+{
+    Zombie zombie_00;
+    zombie_00.announce();
+    return (0);
+}
+
+Zombie* testNewZombie(void)
+{
+    Zombie *zombie_01 = newZombie("Carl");
+    zombie_01->announce();
+    return zombie_01;
+}
+
+bool testRandomChump(void)
+{
+    Zombie zombie_02;
+    zombie_02.randomChump("Karen");
+    return (0);
+}
+
 int main()
 {
-    Zombie  Mane;
-
-    Mane.announce();
-
-    return (0);
+    {
+        std::cout << "\nScope 0" << std::endl;
+        testRawZombieClass();
+    }
+    {
+        std::cout << "\nScope 1" << std::endl;
+        Zombie* zombie_01 = testNewZombie();
+        delete zombie_01;
+    }
+    {
+        std::cout << "\nScope 3" << std::endl;
+        testRandomChump();
+    }
 }

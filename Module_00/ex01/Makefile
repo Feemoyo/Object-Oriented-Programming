@@ -6,14 +6,14 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 17:38:04 by fmoreira          #+#    #+#              #
-#    Updated: 2023/07/02 17:50:41 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/07/09 18:50:44 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= megaphone
 
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -Wpedantic -std=c++98
 
 SRCS		= ./phonebook.cpp
 OBJ_PATH	= ./obj/
