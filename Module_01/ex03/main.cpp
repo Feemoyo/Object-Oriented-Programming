@@ -5,34 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 15:48:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/16 13:31:41 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/07/16 14:27:02 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/07/16 14:38:22 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 #include <iostream>
 
-bool    testHordeZombies(size_t numberZombies)
+bool testWeaponGetSet(void)
 {
-    Zombie* horde_00;
+    Weapon      pewpew;
+    std::string weapon;
 
-    horde_00 = zombieHorde(numberZombies, "Karls");
-    
-    for (size_t i = 0; i < numberZombies; i++)
-    {
-        std::cout << "Zombie ";
-        std::cout << i << std::endl;
-        horde_00[i].announce();
-    }
-    delete[] horde_00;
-     
+    pewpew.setType("Rubber Duck");
+    weapon = pewpew.getType();
+    std::cout << weapon << std::endl;
+    weapon = "Toy Knife";
+    std::cout << weapon << std::endl;
+    weapon = pewpew.getType();
+    std::cout << weapon << std::endl;
     return (0);
 }
 
 int main()
 {
     {
-        testHordeZombies(5);
+        std::cout << "Test Weapon class (getType and setType)" << std::endl;
+        testWeaponGetSet();
+        std::cout << "\n\n" << std::endl;
     }
+    
 }

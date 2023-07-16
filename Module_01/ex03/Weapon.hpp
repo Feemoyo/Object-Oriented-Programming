@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 15:48:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/16 13:31:41 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/07/16 13:48:50 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/07/16 14:32:23 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_CPP
+# define WEAPON_CPP
+
 #include <iostream>
 
-bool    testHordeZombies(size_t numberZombies)
+class Weapon
 {
-    Zombie* horde_00;
+private:
+    std::string type;
 
-    horde_00 = zombieHorde(numberZombies, "Karls");
+public:
+    Weapon( void );
+    ~Weapon();
+
+    const std::string&   getType() const;
+    void    setType(std::string type);
     
-    for (size_t i = 0; i < numberZombies; i++)
-    {
-        std::cout << "Zombie ";
-        std::cout << i << std::endl;
-        horde_00[i].announce();
-    }
-    delete[] horde_00;
-     
-    return (0);
-}
+};
 
-int main()
-{
-    {
-        testHordeZombies(5);
-    }
-}
+
+#endif
