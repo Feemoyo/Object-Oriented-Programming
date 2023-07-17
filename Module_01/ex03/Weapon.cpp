@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:07:50 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/16 14:26:50 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/07/17 12:21:50 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ Weapon::Weapon ( void )
 
 Weapon::~Weapon ()
 {
+    return ;
+}
+
+Weapon::Weapon (std::string type)
+{
+    this->setType(type);
     return ;
 }
 
