@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 08:52:13 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/18 10:32:40 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/07/18 10:55:08 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/07/18 11:47:28 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon)
-    : _name(name), _weapon(weapon)
+HumanB::HumanB (std::string name)
+{
+    this->_name = name;
+    this->_weapon = NULL;
+    return ;
+}
+
+HumanB::~HumanB ()
 {
     return ;
 }
 
-HumanA::~HumanA ()
-{
-    return ;
-}
-
-void    HumanA::attack ( void )
+void    HumanB::attack ( void )
 {
     std::cout << this->_name;
     std::cout << " attacks with their ";
-    std::cout << this->_weapon.getType() << std::endl;
+    if (this->_weapon)
+        std::cout << this->_weapon->getType() << std::endl;
+    else
+        std::cout << std::endl;
 
     return ;
 }
 
+void    HumanB::setWeapon (Weapon &weapon)
+{
+    this->_weapon = &weapon;
+    
+    return ;
+}

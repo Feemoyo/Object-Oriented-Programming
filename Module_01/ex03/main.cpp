@@ -6,12 +6,14 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:27:02 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/17 12:30:41 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/07/18 11:27:52 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include <iostream>
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 bool    testWeaponGetSet(void)
 {
@@ -48,8 +50,41 @@ bool    testParamConstructorWeapon ()
     Weapon  pewpew = Weapon("Rubber Duck");
 
     std::cout << pewpew.getType() << std::endl;
-    return (0); 
     
+    return (0); 
+}
+
+bool    testHumanbWithoutWeapon ()
+{
+    HumanB alisson("Alisson");
+    alisson.attack();
+    
+    return (0);
+}
+
+bool    testSubjectHumanA ()
+{
+    Weapon club = Weapon("crude spiked club");
+    
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+    
+    return (0);
+}
+
+bool    testSubjectHumanB ()
+{
+    Weapon club = Weapon("crude spiked club");
+    
+    HumanB jim("Jim");
+    jim.setWeapon(club);
+    jim.attack();
+    club.setType("some other type of club");
+    jim.attack();
+
+    return (0);
 }
 
 int main()
@@ -67,6 +102,23 @@ int main()
     {
         std::cout << "Test Constructor with Param" << std::endl;
         testParamConstructorWeapon();
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "Test HumanB without Weapon" << std::endl;
+        testHumanbWithoutWeapon();
+        std::cout << "\n" << std::endl;
+    }
+
+    
+    {
+        std::cout << "Test Subject HumanA" << std::endl;
+        testSubjectHumanA();
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "Test Subject HumanB" << std::endl;
+        testSubjectHumanB();
         std::cout << "\n" << std::endl;
     }
 }
