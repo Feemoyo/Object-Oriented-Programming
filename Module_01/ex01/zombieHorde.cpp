@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 15:48:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/16 13:14:11 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/07/28 11:26:23 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Zombie* zombieHorde( int N, std::string name )
     
     for (int i = 0; i < N; i++)
     {
-        // fazer um setter para acessar o name
         horde[i].setName(name);
     }
     return (horde);

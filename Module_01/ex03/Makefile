@@ -6,11 +6,11 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 15:27:37 by fmoreira          #+#    #+#              #
-#    Updated: 2023/07/15 15:09:30 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/07/19 09:20:33 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= zombie
+NAME		= a.out
 
 SRC			= ${wildcard *.cpp}
 OBJ_PATH	= ./obj/

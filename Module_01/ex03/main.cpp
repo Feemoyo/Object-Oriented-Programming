@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:27:02 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/18 11:27:52 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/07/19 08:41:10 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,6 @@ int main()
         testHumanbWithoutWeapon();
         std::cout << "\n" << std::endl;
     }
-
-    
     {
         std::cout << "Test Subject HumanA" << std::endl;
         testSubjectHumanA();
