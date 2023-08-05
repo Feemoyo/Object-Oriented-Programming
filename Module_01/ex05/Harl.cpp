@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:18:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/08/04 10:39:01 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/08/05 08:55:37 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void Harl::complain (std::string level)
     default:
         break;
     }
-    std::cout << i << std::endl;
 }
 
 void Harl::debug( void )
