@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 08:42:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/01 08:18:04 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/01 09:40:57 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ private:
     static const int    fractBits = 8;
     
 public:
-    Fixed(/* args */);  //constructor
+    Fixed( void);  //constructor
     ~Fixed();           //destructor
     
     Fixed(const Fixed &other); //copy assignment operator overload
