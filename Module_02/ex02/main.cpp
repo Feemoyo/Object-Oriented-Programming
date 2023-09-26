@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:19:08 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/26 11:28:42 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/26 11:34:04 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -309,14 +309,6 @@ int main(void)
 	}
 	{
 		std::cout << "#########################" << std::endl;
-		std::cout << "EX02 Test\n"
-				  << std::endl;
-		subjectTest02();
-		std::cout << "\n\n"
-				  << std::endl;
-	}
-	{
-		std::cout << "#########################" << std::endl;
 		std::cout << "Comparison Operators Test\n"
 				  << std::endl;
 		sixComparisonOperators();
@@ -352,6 +344,14 @@ int main(void)
 		std::cout << "Member function Max Test\n"
 				  << std::endl;
 		memberFunctionMax();
+		std::cout << "\n\n"
+				  << std::endl;
+	}
+	{
+		std::cout << "#########################" << std::endl;
+		std::cout << "EX02 Test\n"
+				  << std::endl;
+		subjectTest02();
 		std::cout << "\n\n"
 				  << std::endl;
 	}
