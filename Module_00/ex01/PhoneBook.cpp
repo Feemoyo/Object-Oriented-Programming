@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:51:08 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/28 09:54:35 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/30 11:59:14 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void PhoneBook::searchOption(){
 
 void  PhoneBook::saveContact(Contact contact) // #
 {
+	std::cout << "save contact" << std::endl;
 	if (_index > 7)
 		_index = 0;
 	_contacts[_index] = contact;

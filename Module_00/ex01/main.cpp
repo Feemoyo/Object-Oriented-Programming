@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:58:46 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/28 10:16:05 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:18:35 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,34 @@ static void displayMenu()
 
 static bool getOptions(PhoneBook *phonebook)
 {
-    char option;
+    std::string option;
     Contact contact;
 
-    std::cin.get(option);
+    std::cin >> option;
     std::cin.ignore(1, '\n');
-    if (option == '0')
-        return false;
-    else if (option == '1')
+    if (option == "EXIT")
+        return (false);
+    else if (option == "ADD")
     {
         if (contact.populateContact())
             phonebook->saveContact(contact);
     }
-    else if (option == '2')
+    else if (option == "SEARCH")
     {
         phonebook->searchOption();
+    }
+    else if (std::cin.eof())
+    {
+        std::cout << std::endl;
+        return (false);
     }
     else
     {
         std::cout << "\nInvalid option\n"
                   << std::endl;
+                  
     }
-    return true;
+    return (true);
 }
 
 int main(void)

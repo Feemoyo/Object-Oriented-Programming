@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:12:19 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/28 10:28:55 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:33:36 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,9 @@ bool Contact::isAlpha(std::string str)
 {
 	size_t i;
 
-	for (i = 0; str.length(); i++)
+	for (i = 0; i < str.length(); i++)
 	{
-		if (isascii(str.at(i)))
+		if (!isascii(str.at(i)))
 		{
 			std::cout << "\nInvalid arg: " << str << "\n"
 					  << std::endl;
@@ -147,6 +147,7 @@ bool Contact::isPhone(std::string phoneNumber)
 						  << std::endl;
 				return (false);
 			}
+			
 		}
 	}
 	return (true);
