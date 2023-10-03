@@ -6,7 +6,7 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 15:27:37 by fmoreira          #+#    #+#              #
-#    Updated: 2023/07/19 16:39:01 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/10/03 09:45:00 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ VALFLAGS 	= --quiet \
 
 DEL			= rm -rf
 
+.DEFAULT_GOAL = all
+
 ${OBJ_PATH}%.o: %.cpp
 	${CXX} ${CXXFLAGS} -c $< -o $@
 
@@ -46,9 +48,6 @@ ${OBJ}: | ${OBJ_PATH}
 
 ${OBJ_PATH}:
 	mkdir ${OBJ_PATH}
-
-%.o: %.cpp
-	${CXX} ${CXXFLAGS} ${INCLUDES} -c $< -o $@ 
 
 clean:
 	${DEL} ${OBJ_PATH}

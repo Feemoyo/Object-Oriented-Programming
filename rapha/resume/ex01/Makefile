@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: rapdos-s <rapdos-s@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 15:27:37 by fmoreira          #+#    #+#              #
-#    Updated: 2023/10/03 09:45:17 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/10/01 13:52:16 by rapdos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= a.out
+NAME		= PhoneBook
 
 SRC			= ${wildcard *.cpp}
 OBJ_PATH	= ./obj/
@@ -34,9 +34,11 @@ VALFLAGS 	= --quiet \
 
 DEL			= rm -rf
 
+# Mesmo do arquivo anterior
 .DEFAULT_GOAL = all
 
-${OBJ_PATH}%.o: %.cpp
+# Mesmo do arquivo anterior
+$(OBJ_PATH)%.o:	./%.cpp | $(OBJ_PATH)
 	${CXX} ${CXXFLAGS} -c $< -o $@
 
 all: ${NAME}
@@ -44,10 +46,15 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 	${CXX} ${CXXFLAGS} ${INCLUDES} ${OBJ} -o ${NAME}
 
-${OBJ}: | ${OBJ_PATH}
+# ${OBJ}: | ${OBJ_PATH}
 
+# Mesmo do arquivo anterior
 ${OBJ_PATH}:
-	mkdir ${OBJ_PATH}
+	mkdir -p ${OBJ_PATH}
+
+# Removendo isso aqui pro Makefile não ficar confuso :3
+# %.o: %.cpp
+# 	${CXX} ${CXXFLAGS} ${INCLUDES} -c $< -o $@ 
 
 clean:
 	${DEL} ${OBJ_PATH}

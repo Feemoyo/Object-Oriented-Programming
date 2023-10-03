@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rapdos-s <rapdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:12:19 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/02 19:33:39 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:03:52 by rapdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ bool Contact::populateContact()
 	return (true);
 }
 
+Contact &Contact::returnContact()
+{
+	return (*this);
+}
+
 bool Contact::isBlank(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
 	if (firstName.empty())
@@ -136,13 +141,12 @@ bool Contact::isPhone(std::string phoneNumber)
 		size_t i;
 		for (i = 0; i < phoneNumber.length(); i++)
 		{
-			if (isdigit(phoneNumber.at(i)) < 48 || isdigit(phoneNumber.at(i)) > 57)
+			if (isdigit(phoneNumber.at(i) == 0))
 			{
 				std::cout << "\nPhone number must contain only numbers\n"
 						  << std::endl;
 				return (false);
 			}
-			std::cout << phoneNumber.at(i) << std::endl;
 			
 		}
 	}

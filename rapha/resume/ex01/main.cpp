@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rapdos-s <rapdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:58:46 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/03 09:48:26 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/01 13:55:27 by rapdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 static void displayMenu()
 {
+    // Atualizei o menu para não parecer que a pessoa pode usar números
     std::cout << "Please Select: \n";
     std::cout << "ADD \n";
     std::cout << "SEARCH \n";

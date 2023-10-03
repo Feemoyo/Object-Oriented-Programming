@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 18:25:51 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/02 19:33:45 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:49:11 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
     static bool isAlpha(std::string str);
     static bool isPhone(std::string phoneNumber);
     static bool checker(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
+    static void isEOF();
     
 public:
     Contact();
@@ -42,6 +43,7 @@ public:
     std::string getDarkestSecret();
 
     bool populateContact();
+    Contact &returnContact();
 };
 
 #endif
