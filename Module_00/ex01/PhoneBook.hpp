@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:51:00 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/09/28 09:52:21 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/03 10:34:36 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ public:
 	void printList(void);
 	void printContactData(int index);
 	void searchOption();
-	
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:03:52 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/03 09:40:07 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/03 10:28:45 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	megaphone(int argc, char **argv)
 		j = 0;
 		while (j < current.size())
 		{
-			std::cout << (char)toupper(current[j]);
+			std::cout << (char)std::toupper(current[j]);
 			j++;
 		}
 		i++;

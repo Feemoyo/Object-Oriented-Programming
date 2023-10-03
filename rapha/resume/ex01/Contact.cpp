@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rapdos-s <rapdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:12:19 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/02 19:03:52 by rapdos-s         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:04:17 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ bool Contact::populateContact()
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, this->_darkestSecret);
 
-	if (!checker(this->_firstName, this->_lastName, this->_nickName, this->_phoneNumber, this->_darkestSecret))
+	if (!_checker(this->_firstName, this->_lastName, this->_nickName, this->_phoneNumber, this->_darkestSecret))
 		return (false);
 
 	return (true);
@@ -82,7 +82,7 @@ Contact &Contact::returnContact()
 	return (*this);
 }
 
-bool Contact::isBlank(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
+bool Contact::_isBlank(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
 	if (firstName.empty())
 	{
@@ -112,7 +112,7 @@ bool Contact::isBlank(std::string firstName, std::string lastName, std::string n
 	return (true);
 }
 
-bool Contact::isAlpha(std::string str)
+bool Contact::_isAlpha(std::string str)
 {
 	size_t i;
 
@@ -128,7 +128,7 @@ bool Contact::isAlpha(std::string str)
 	return (true);
 }
 
-bool Contact::isPhone(std::string phoneNumber)
+bool Contact::_isPhone(std::string phoneNumber)
 {
 	if (phoneNumber.size() > 30)
 	{
@@ -153,13 +153,13 @@ bool Contact::isPhone(std::string phoneNumber)
 	return (true);
 }
 
-bool Contact::checker(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
+bool Contact::_checker(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
-	if (!isBlank(firstName, lastName, nickName, phoneNumber, darkestSecret))
+	if (!_isBlank(firstName, lastName, nickName, phoneNumber, darkestSecret))
 		return (false);
-	if (!isAlpha(firstName) || !isAlpha(lastName) || !isAlpha(nickName) || !isAlpha(darkestSecret))
+	if (!_isAlpha(firstName) || !_isAlpha(lastName) || !_isAlpha(nickName) || !_isAlpha(darkestSecret))
 		return (false);
-	if (!isPhone(phoneNumber))
+	if (!_isPhone(phoneNumber))
 		return (false);
 	return (true);
 }
