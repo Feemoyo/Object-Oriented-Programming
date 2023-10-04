@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:27:02 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/19 08:41:10 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:17:50 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ bool    testParamConstructorWeapon ()
     return (0); 
 }
 
-bool    testHumanbWithoutWeapon ()
+bool    testHumanBWithoutWeapon ()
 {
     HumanB alisson("Alisson");
     alisson.attack();
@@ -106,7 +106,7 @@ int main()
     }
     {
         std::cout << "Test HumanB without Weapon" << std::endl;
-        testHumanbWithoutWeapon();
+        testHumanBWithoutWeapon();
         std::cout << "\n" << std::endl;
     }
     {

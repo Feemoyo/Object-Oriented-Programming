@@ -6,12 +6,16 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:50:40 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/15 15:47:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:35:20 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
+
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
+
 
 bool testRawZombieClass(void)
 {
@@ -30,7 +34,7 @@ Zombie* testNewZombie(void)
 bool testRandomChump(void)
 {
     Zombie zombie_02;
-    zombie_02.randomChump("Karen");
+    randomChump("Karen");
     return (0);
 }
 
@@ -43,7 +47,14 @@ int main()
     {
         std::cout << "\nScope 1" << std::endl;
         Zombie* zombie_01 = testNewZombie();
-        delete zombie_01;
+        delete (zombie_01);
+    }
+    {
+        std::cout << "\nScope 2" << std::endl;
+        Zombie* zombie_01 = testNewZombie();
+        std::cout << "Announced after role scope!" << std::endl;
+        zombie_01->announce();
+        delete (zombie_01);
     }
     {
         std::cout << "\nScope 3" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:52:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/16 13:13:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:02:14 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 private:
-    std::string name;
+    std::string _name;
 
 public:
     Zombie( void );
@@ -29,7 +29,5 @@ public:
     Zombie(const std::string name);
     void announce( void );
 };
-
-Zombie* zombieHorde( int N, std::string name );
 
 #endif

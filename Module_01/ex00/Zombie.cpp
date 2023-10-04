@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:09:40 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/15 15:15:44 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:03:35 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,24 @@ Zombie::Zombie ( void )
 
 Zombie::Zombie (const std::string name)
 {
-    this->name = name;
+    this->_name = name;
     return ;
 }
 
 Zombie::~Zombie ()
 {
-    if (this->name.empty())
-        std::cout << "Unnamed_Z: Am I undead and I'm gonna be dead again? Bye-Brain!" <<std::endl;
+    if (this->_name.empty())
+        std::cout << "UnnamedZ: Am I undead and I'm gonna be dead again? Bye-Brain!" <<std::endl;
     else
-        std::cout << this->name + ": Am I undead and I'm gonna be dead again? Bye-Brain!" <<std::endl;
+        std::cout << this->_name + ": Am I undead and I'm gonna be dead again? Bye-Brain!" <<std::endl;
     return ;
 }
 
 void Zombie::announce ( void )
 {
-    if (this->name.empty())
-        std::cout << "Unnamed_Z: BraiiiiiiinnnzzzZ..." << std::endl;
+    if (this->_name.empty())
+        std::cout << "UnnamedZ: BraiiiiiiinnnzzzZ..." << std::endl;
     else
-        std::cout << this->name + ": BraiiiiiiinnnzzzZ..." << std::endl;
+        std::cout << this->_name + ": BraiiiiiiinnnzzzZ..." << std::endl;
     return ;
 }

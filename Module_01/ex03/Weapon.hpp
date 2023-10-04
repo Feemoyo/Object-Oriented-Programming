@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 13:48:50 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/17 12:19:30 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:11:24 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon
 {
 private:
-    std::string type;
+    std::string _type;
 
 public:
     Weapon( void );
@@ -29,6 +29,5 @@ public:
     void    setType(std::string type);
 
 };
-
 
 #endif
