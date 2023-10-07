@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:18:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/08/05 08:55:37 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/07 09:19:05 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Harl::~Harl ()
 void Harl::complain (std::string level)
 {
     std::string levels[] = {"debug", "info", "warning", "error"};
-    void (Harl::*function[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*function[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
     
     size_t i = 0;
 
@@ -51,22 +51,22 @@ void Harl::complain (std::string level)
     }
 }
 
-void Harl::debug( void )
+void Harl::_debug( void )
 {
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
-void Harl::info( void )
+void Harl::_info( void )
 {
     std::cout << "I cannot believe adding extra bacon costs more money. You didn't putenough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
-void Harl::warning( void )
+void Harl::_warning( void )
 {
     std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." << std::endl;
 }
 
-void Harl::error( void )
+void Harl::_error( void )
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
