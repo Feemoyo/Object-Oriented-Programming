@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:55:45 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/06 19:59:31 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:02:51 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void	File::_replaceString()
 {
 	size_t pos = 0;
 
+    if (this->_s1 == "")
+        return ;
+    
     while ((pos = this->_line.find(this->_s1, pos)) != std::string::npos)
     {
         this->_line = this->_line.substr(0, pos) + this->_s2 + this->_line.substr(pos + this->_s1.length());
