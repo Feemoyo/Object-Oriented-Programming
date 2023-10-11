@@ -22,33 +22,18 @@ Harl::~Harl ()
     std::cout << "Harl is out!" << std::endl;
 }
 
-void Harl::complain (std::string level)
+void Harl::complain (const std::string level)
 {
-    std::string levels[] = {"debug", "info", "warning", "error"};
-    void (Harl::*function[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+    std::string levels[] = {"debug", "info", "warning", "error", "nothing"};
+    void (Harl::*function[5])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error, &Harl::_nothing};
     
     size_t i = 0;
 
     while (i != 4 && level != levels[i])
+	{
         i++;
-
-    switch (i)
-    {
-    case 0:
-        (this->*function[0])();
-        break;
-    case 1:
-        (this->*function[1])();
-        break;
-    case 2:
-        (this->*function[2])();
-        break;
-    case 3:
-        (this->*function[3])();
-        break;
-    default:
-        break;
-    }
+	}
+	(this->*function[i])();
 }
 
 void Harl::_debug( void )
@@ -69,4 +54,9 @@ void Harl::_warning( void )
 void Harl::_error( void )
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void Harl::_nothing( void )
+{
+    return ;
 }

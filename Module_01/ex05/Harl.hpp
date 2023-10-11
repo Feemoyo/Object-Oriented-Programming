@@ -22,12 +22,13 @@ private:
     void _info ( void );
     void _warning ( void );
     void _error ( void );
+	void _nothing ( void );
 
 public:
     Harl( void );
     ~Harl();
 
-    void complain (std::string level);
+    void complain (const std::string level);
 };
 
 #endif

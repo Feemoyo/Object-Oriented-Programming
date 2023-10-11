@@ -19,6 +19,13 @@ HumanB::HumanB (std::string name)
     return ;
 }
 
+HumanB::HumanB (std::string name, Weapon &weapon)
+{
+    this->_name = name;
+    this->_weapon = &weapon;
+    return ;
+}
+
 HumanB::~HumanB ()
 {
     return ;

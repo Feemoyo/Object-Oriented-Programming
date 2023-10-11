@@ -40,6 +40,4 @@ public:
 	void changeData();
 };
 
-//	std::cout << "Content copied with replacement into '" << this->_newFile << ".replace" << std::endl;
-
 #endif
