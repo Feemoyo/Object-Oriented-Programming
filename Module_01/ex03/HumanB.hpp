@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 10:30:39 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/07/18 11:11:34 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/11 08:53:57 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ private:
     Weapon*     _weapon;
     
 public:
-    HumanB(std::string name);
-	HumanB(std::string name, Weapon &weapon);
+    HumanB(const std::string name);
+	HumanB(const std::string name, Weapon &weapon);
     ~HumanB();
 
     void    attack();
