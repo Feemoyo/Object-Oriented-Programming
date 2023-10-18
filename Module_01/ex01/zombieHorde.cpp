@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 15:48:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/11 08:51:57 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/18 08:10:35 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <cstdio>
 
-Zombie* zombieHorde( const int N, std::string name )
+Zombie* zombieHorde(int N, std::string name)
 {
     Zombie* horde = new Zombie[N];
     
