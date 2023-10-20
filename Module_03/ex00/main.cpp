@@ -1,0 +1,114 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/20 08:27:50 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/10/20 13:07:09 by fmoreira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+
+void testOrthodoxCanonical(std::string name)
+{
+    ClapTrap clapTrap00;
+    ClapTrap clapTrap01(name);
+
+    std::cout << "---Copy---" << std::endl;
+    ClapTrap clapTrap02 = clapTrap01;
+    std::cout << "---Copy Assigment---" << std::endl;
+    clapTrap00 = clapTrap02;
+
+    std::cout << "ClapTrap 00: " << clapTrap00.getName() << std::endl;
+    std::cout << "ClapTrap 01: " << clapTrap01.getName() << std::endl;
+    std::cout << "ClapTrap 02: " << clapTrap02.getName() << std::endl;
+
+    return ;
+}
+
+void basicTestAttack(std::string name)
+{
+    ClapTrap clapTrap00(name);
+
+
+    for(int i = 0; i < 15; i++)
+        clapTrap00.attack("Random chump");
+    return ;
+}
+
+void takeDamageTest(std::string name)
+{
+    ClapTrap clapTrap00(name);
+    ClapTrap clapTrap01("Other x1 " + name);
+    ClapTrap clapTrap02("Other x2 " + name);
+    ClapTrap clapTrap03("Other x3 " + name);
+    
+
+    clapTrap00.takeDamage(9);
+    clapTrap00.checkHealth();
+    
+    clapTrap01.takeDamage(10);
+    clapTrap01.checkHealth();
+
+    clapTrap02.takeDamage(11);
+    clapTrap02.checkHealth();
+
+    clapTrap03.takeDamage(11);
+    clapTrap03.takeDamage(12);
+    clapTrap03.checkHealth();
+    return ;
+}
+
+void    beRepairedTest(std::string name)
+{
+    ClapTrap clapTrap00(name);
+    ClapTrap clapTrap01("Other x1 " + name);
+    ClapTrap clapTrap02("Other x2 " + name);
+    
+
+    clapTrap00.takeDamage(9);
+    clapTrap00.checkHealth();
+    clapTrap00.beRepaired(-10);
+    clapTrap00.checkHealth();
+    
+    clapTrap01.takeDamage(10);
+    clapTrap01.checkHealth();
+    clapTrap01.beRepaired(1000);
+    clapTrap01.checkHealth();
+
+    clapTrap02.takeDamage(11);
+    clapTrap02.checkHealth();
+    clapTrap02.beRepaired(1000);
+    clapTrap02.checkHealth();
+
+    return ;
+}
+
+int main()
+{
+    {
+        std::cout << "00 - Testing Orthodox Canonical!\n" << std::endl;
+        testOrthodoxCanonical("Grey");
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "01 - Basic test with attack method!\n" << std::endl;
+        basicTestAttack("Cian");
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "02 - Test takeDamage method!\n" << std::endl;
+        takeDamageTest("Aero");
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "03 - Test beRepaired method!\n" << std::endl;
+        beRepairedTest("Alizarin");
+        std::cout << "\n" << std::endl;
+    }
+
+    return (0);
+}
