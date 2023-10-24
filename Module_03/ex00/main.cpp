@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:27:50 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/20 13:07:09 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/24 06:12:48 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void    beRepairedTest(std::string name)
     ClapTrap clapTrap00(name);
     ClapTrap clapTrap01("Other x1 " + name);
     ClapTrap clapTrap02("Other x2 " + name);
+    ClapTrap clapTrap03("Other x3 " + name);
     
 
     clapTrap00.takeDamage(9);
@@ -84,7 +85,81 @@ void    beRepairedTest(std::string name)
     clapTrap02.beRepaired(1000);
     clapTrap02.checkHealth();
 
+    clapTrap03.takeDamage(9);
+    clapTrap03.checkHealth();
+    clapTrap03.beRepaired(5);
+    clapTrap03.checkHealth();
+
     return ;
+}
+
+void    testCopyAfterDamage(std::string name)
+{
+    ClapTrap clapTrap00(name);
+    ClapTrap clapTrap01;
+    ClapTrap clapTrap03;
+    
+    clapTrap00.takeDamage(9);
+    clapTrap00.checkHealth();
+    clapTrap00.beRepaired(-10);
+    clapTrap00.checkHealth();
+
+    clapTrap01 = clapTrap00;
+
+    std::cout << "Copy" << std::endl;
+    clapTrap01.checkHealth();
+    
+    ClapTrap clapTrap02("Other x2 " + name);
+
+    clapTrap02.takeDamage(5);
+    clapTrap02.checkHealth();
+    clapTrap02.beRepaired(2);
+    clapTrap02.checkHealth();
+
+    clapTrap03 = clapTrap02;
+
+    std::cout << "Copy" << std::endl;
+    clapTrap03.checkHealth();
+    
+}
+
+void    testCopyAssigmentAfterDamage(std::string name)
+{
+    ClapTrap clapTrap00(name);
+    
+    clapTrap00.takeDamage(9);
+    clapTrap00.checkHealth();
+    clapTrap00.beRepaired(-10);
+    clapTrap00.checkHealth();
+
+    ClapTrap clapTrap01 = clapTrap00;
+
+    std::cout << "Copy Assigment" << std::endl;
+    clapTrap01.checkHealth();
+    
+    ClapTrap clapTrap02("Other x2 " + name);
+
+    clapTrap02.takeDamage(8);
+    clapTrap02.checkHealth();
+    clapTrap02.beRepaired(1);
+    clapTrap02.checkHealth();
+
+    ClapTrap clapTrap03 = clapTrap02;
+
+    std::cout << "Copy Assigment" << std::endl;
+    clapTrap03.checkHealth();
+    
+}
+
+void    copyTest(std::string name)
+{
+    ClapTrap clapTrap00;
+    ClapTrap clapTrap01(name);
+
+    std::cout << "---Copy---" << std::endl;
+    ClapTrap clapTrap02 = clapTrap01;
+    std::cout << "---Copy Assigment---" << std::endl;
+    clapTrap00 = clapTrap02;
 }
 
 int main()
@@ -107,6 +182,16 @@ int main()
     {
         std::cout << "03 - Test beRepaired method!\n" << std::endl;
         beRepairedTest("Alizarin");
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "04 - Test Copy after take damage method!\n" << std::endl;
+        testCopyAfterDamage("Brown");
+        std::cout << "\n" << std::endl;
+    }
+    {
+        std::cout << "05 - Test Assigment Copy after take damage method!\n" << std::endl;
+        testCopyAssigmentAfterDamage("Black");
         std::cout << "\n" << std::endl;
     }
 

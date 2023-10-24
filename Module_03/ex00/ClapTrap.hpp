@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 06:33:44 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/20 12:37:25 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/21 12:45:44 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ public:
     
     std::string getName() const;
     void        checkHealth() const;
+	int			getHitPoints() const;
+	int			getEnergyPoints() const;
 };
 
 #endif

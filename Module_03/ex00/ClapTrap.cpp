@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 07:24:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/20 13:06:41 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/24 05:43:41 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,21 @@ ClapTrap::ClapTrap(void)
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDamage = 0;
-    return;
+    return ;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "~Default ClapTrap destructor called." << std::endl;
-    return;
+    return ;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
     std::cout << "~Copy constructor ClapTrap called." << std::endl;
     this->_name = other.getName();
+    this->_hitPoints = other.getHitPoints();
+    this->_energyPoints = other.getEnergyPoints();
     return;
 }
 
@@ -41,6 +43,8 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
     if (this == &other)
         return (*this);
     this->_name = other.getName();
+    this->_hitPoints = other.getHitPoints();
+    this->_energyPoints = other.getEnergyPoints();
     return (*this);
 }
 
@@ -75,8 +79,8 @@ void    ClapTrap::beRepaired(unsigned int amount)
     if (!this->_checkAction())
     {
         std::cout << "ClapTrap " + this->_name + " healed for " << amount << " hit points." << std::endl;
-		this->_hitPoints += amount >> 1;
-		if (this->_hitPoints > 10)
+        this->_hitPoints += amount;
+		if (amount > 10)
 			this->_hitPoints = 10;
     }
     return ;
@@ -91,9 +95,9 @@ bool    ClapTrap::_checkAction()
     }
     else
     {
-        if (!this->_hitPoints)
+        if (this->_hitPoints < 1)
             std::cout << "ClapTrap " << this->_name << "no longer has a life." << std::endl;
-        if (!this->_energyPoints)
+        if (this->_energyPoints < 1)
             std::cout << "ClapTrap " + this->_name + " has no energy available." << std::endl;
         return (1);
     }
@@ -113,4 +117,14 @@ void    ClapTrap::checkHealth() const
     }
     std::cout << "ClapTrap " + this->_name + " has " << this->_hitPoints << " life points." << std::endl;
     return ;
+}
+
+int    ClapTrap::getHitPoints() const
+{
+    return (this->_hitPoints);
+}
+
+int    ClapTrap::getEnergyPoints() const
+{
+    return (this->_hitPoints);
 }
