@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 06:23:27 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/24 10:47:44 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:50:27 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class ScavTrap : public ClapTrap
 {
 private:
-    unsigned int    _maxHP;
     bool            _guardGate;
 
 public:

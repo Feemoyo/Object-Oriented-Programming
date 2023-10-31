@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:35:59 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/25 12:37:11 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:50:38 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class FragTrap : public ClapTrap
 {
 private:
-    unsigned int    _maxHP;
     static bool     _highFive;
 
 public:

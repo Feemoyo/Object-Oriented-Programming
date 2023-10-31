@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 07:24:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/24 05:43:41 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:27:52 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
     if (!this->_checkAction())
     {
         std::cout << "ClapTrap " + this->_name + " healed for " << amount << " hit points." << std::endl;
-        this->_hitPoints += amount;
+        this->_hitPoints = this->_hitPoints + amount;
 		if (amount > 10)
 			this->_hitPoints = 10;
     }

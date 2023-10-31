@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 06:33:44 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/24 08:49:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:50:16 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 
 class ClapTrap
 {
-private:
-    unsigned int    _maxHP; 
-
 protected:
     std::string     _name;
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;
+	
+    unsigned int    _maxHP; 
 
     bool        _checkAction(void);
     
