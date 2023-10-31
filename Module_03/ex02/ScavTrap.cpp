@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 06:51:45 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/24 10:52:55 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:39:30 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap()
     this->_energyPoints = 50;
     this->_attackDamage = 20;
     return;
+}
+
+void    ScavTrap::attack(const std::string &target)
+{
+    if (!this->_checkAction())
+	{
+    	std::cout << "ScavTrap " + this->_name + " attacks " + target + ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	}
+	return ;
 }
 
 void    ScavTrap::guardGate()

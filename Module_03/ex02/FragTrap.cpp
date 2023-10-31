@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:53:53 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/25 12:41:02 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:39:09 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ FragTrap::FragTrap(const std::string name) : ClapTrap()
     this->_energyPoints = 100;
     this->_attackDamage = 30;
     return ;
+}
+
+void    FragTrap::attack(const std::string &target)
+{
+    if (!this->_checkAction())
+	{
+    	std::cout << "FragTrap " + this->_name + " attacks " + target + ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	}
+	return ;
 }
 
 void    FragTrap::highFiveGuys(void)

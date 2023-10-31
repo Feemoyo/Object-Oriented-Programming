@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 06:23:27 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 17:48:49 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:36:49 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
     ScavTrap& operator=(const ScavTrap &other);
     
     ScavTrap(const std::string name);
+    void    attack(const std::string &target);
     void    guardGate();
 };
 

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:35:59 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 17:50:38 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:40:15 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     FragTrap &operator=(const FragTrap &other);
 
     FragTrap(const std::string name);
+    void    attack(const std::string &target);
     void    highFiveGuys(void);
 };
 

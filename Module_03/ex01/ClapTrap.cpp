@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 07:24:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 17:38:43 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:37:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void    ClapTrap::attack(const std::string &target)
 {
     if (!this->_checkAction())
 	{
-    	std::cout << this->_name + " attacks " + target + ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+    	std::cout << "ClapTrap " + this->_name + " attacks " + target + ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 	}
 	return ;
 }

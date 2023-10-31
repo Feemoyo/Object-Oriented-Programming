@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:27:50 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 17:50:50 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:31:38 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,12 +256,12 @@ int main()
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "08 - ScavTrap Testing Orthodox Canonical!\n" << std::endl;
+        std::cout << "08 - FragTrap Testing Orthodox Canonical!\n" << std::endl;
         fragTestOrthodoxCanonical("Purple");
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "09 - ScavTrap testing methods\n" << std::endl;
+        std::cout << "09 - FragTrap testing methods\n" << std::endl;
         fragMethodsTest("Cian");
         std::cout << "\n" << std::endl;
     }
