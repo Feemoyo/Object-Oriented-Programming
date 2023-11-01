@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:54:06 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 18:44:10 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:58:18 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Bureaucrat
         Bureaucrat &operator = ( Bureaucrat const &other );
 
         Bureaucrat( const std::string name, const int grade );
+        
         class GradeTooHighException: public std::exception
         {
             public:
@@ -40,10 +41,10 @@ class Bureaucrat
                 virtual const char* what() const throw();
         };
 
-    std::string const	getName( void ) const;
-    int                 getGrade( void ) const;
-    void                incrementGrade( void );
-    void                decrementGrade( void );
+        std::string const	getName( void ) const;
+        int                 getGrade( void ) const;
+        void                incrementGrade( void );
+        void                decrementGrade( void );
 };
 
 std::ostream& operator<<(std::ostream& rhs, const Bureaucrat &lhs);

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:02:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/01 13:43:29 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:50:23 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,5 @@ void                Bureaucrat::decrementGrade( void )
 
 std::ostream& operator<<(std::ostream& rhs, const Bureaucrat &lhs){
 	rhs << lhs.getName() << ", bureaucrat grade " << lhs.getGrade();
-	return rhs;
+	return (rhs);
 }
