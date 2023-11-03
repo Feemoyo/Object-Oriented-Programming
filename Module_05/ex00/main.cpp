@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:41:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/01 13:45:57 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:10:19 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void    test00( void )
     std::cout << bureaucrat1 << std::endl;
     std::cout << bureaucrat2 << std::endl;
     std::cout << bureaucrat3 << std::endl;
+
+    return ;
 }
 
 void    test01( void )
@@ -57,6 +59,7 @@ void    test01( void )
     bureaucrat = new Bureaucrat("Yarl", 1);
     
     delete (bureaucrat);
+    return ;
 }
 
 void    test02( void )
@@ -84,6 +87,7 @@ void    test02( void )
     }
 
     delete (bureaucrat);
+    return ;
 }
 
 void    test03( void )
@@ -111,27 +115,28 @@ void    test03( void )
     }
 
     delete (bureaucrat);
+    return ;
 }
 
 int main()
 {
 {
-    std::cout << "00 - Teste Bureaucrat Orthodox Canonical" << std::endl;
+    std::cout << "00 - Test Bureaucrat Orthodox Canonical" << std::endl;
     test00();
     std::cout << "\n" << std::endl;
  }
  {
-    std::cout << "01 - Teste Bureaucrat grade < 1 && grade > 150" << std::endl;
+    std::cout << "01 - Test Bureaucrat grade < 1 && grade > 150" << std::endl;
     test01();
     std::cout << "\n" << std::endl;
  }
  {
-    std::cout << "02 - Teste Bureaucrat grade 1 decrement and increment" << std::endl;
+    std::cout << "02 - Test Bureaucrat grade 1 decrement and increment" << std::endl;
     test02();
     std::cout << "\n" << std::endl;
  }
  {
-    std::cout << "03 - Teste Bureaucrat grade 1 decrement and increment" << std::endl;
+    std::cout << "03 - Test Bureaucrat grade 1 decrement and increment" << std::endl;
     test03();
     std::cout << "\n" << std::endl;
  }

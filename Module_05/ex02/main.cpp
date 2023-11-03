@@ -6,13 +6,13 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:41:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/02 16:13:06 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:35:36 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 void    test00( void )
 {
@@ -121,19 +121,19 @@ void    test03( void )
 
 void test04( void )
 {
-    Form form00("Form 42", 70, 80);
+    AForm AForm00("AForm 42", 70, 80);
     
     std::cout << "--- Copy constructor ---" << std::endl;
-    Form form01 = form00;
+    AForm AForm01 = AForm00;
     std::cout << std::endl;
 
     std::cout << "--- Copy assigment ---" << std::endl;
-    Form form02;
-    form02 = form01;
+    AForm AForm02;
+    AForm02 = AForm01;
 
-    std::cout << form00 << std::endl;
-    std::cout << form01 << std::endl;
-    std::cout << form02 << std::endl;
+    std::cout << AForm00 << std::endl;
+    std::cout << AForm01 << std::endl;
+    std::cout << AForm02 << std::endl;
 
     return ;
 }
@@ -142,7 +142,7 @@ void    test05( void )
 {
     try
     {
-        Form form("Form 42", 151, 1);
+        AForm AForm("AForm 42", 151, 1);
     }
     catch(const std::exception& e)
     {
@@ -150,7 +150,7 @@ void    test05( void )
     }
     try
     {
-        Form form("Form 24", 150, -1);
+        AForm AForm("AForm 24", 150, -1);
     }
     catch(const std::exception& e)
     {
@@ -162,10 +162,10 @@ void    test05( void )
 void    test06( void )
 {
     Bureaucrat  bureaucrat("Carl", 1);
-    Form        form("Form 42", 1, 1);
+    AForm        AForm("AForm 42", 1, 1);
 
-    form.beSigned(bureaucrat);
-    std::cout << form << std::endl;
+    AForm.beSigned(bureaucrat);
+    std::cout << AForm << std::endl;
     
     return ;
 }
@@ -173,40 +173,40 @@ void    test06( void )
 void    test07( void )
 {
     Bureaucrat  bureaucrat("Carl", 50);
-    Form        form1("Form 42", 51, 1);
-    Form        form2("Form 24", 50, 1);
-    Form        form3("Form 12", 1, 1);
+    AForm        AForm1("AForm 42", 51, 1);
+    AForm        AForm2("AForm 24", 50, 1);
+    AForm        AForm3("AForm 12", 1, 1);
 
     try
     {
-        form1.beSigned(bureaucrat);
+        AForm1.beSigned(bureaucrat);
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Formm 42 failed: " << e.what() << '\n';
+        std::cerr << "AFormm 42 failed: " << e.what() << '\n';
     }
     
     try
     {
-        form2.beSigned(bureaucrat);
+        AForm2.beSigned(bureaucrat);
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Formm 24 failed: " << e.what() << '\n';
+        std::cerr << "AFormm 24 failed: " << e.what() << '\n';
     }
     
     try
     {
-        form3.beSigned(bureaucrat);
+        AForm3.beSigned(bureaucrat);
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Formm 12 failed: " << e.what() << '\n';
+        std::cerr << "AFormm 12 failed: " << e.what() << '\n';
     }
     
-    std::cout << form1 << std::endl;
-    std::cout << form2 << std::endl;
-    std::cout << form3 << std::endl;
+    std::cout << AForm1 << std::endl;
+    std::cout << AForm2 << std::endl;
+    std::cout << AForm3 << std::endl;
     
     return ;
 }
@@ -215,12 +215,12 @@ void    test08( void )
 {
     Bureaucrat  bureaucrat1("Carl", 50);
     Bureaucrat  bureaucrat2("Larl", 1);
-    Form        form1("Form 42", 50, 1);
-    Form        form2("Form 24", 1, 1);
+    AForm        AForm1("AForm 42", 50, 1);
+    AForm        AForm2("AForm 24", 1, 1);
 
     try
     {
-        bureaucrat1.signForm(form1);
+        bureaucrat1.signForm(AForm1);
     }
     catch(const std::exception& e)
     {
@@ -229,7 +229,7 @@ void    test08( void )
 
     try
     {
-        bureaucrat1.signForm(form2);
+        bureaucrat1.signForm(AForm2);
     }
     catch(const std::exception& e)
     {
@@ -238,7 +238,7 @@ void    test08( void )
 
     try
     {
-        bureaucrat2.signForm(form1);
+        bureaucrat2.signForm(AForm1);
 
     }
     catch(const std::exception& e)
@@ -247,8 +247,8 @@ void    test08( void )
     }
     
     std::cout << std::endl;
-    std::cout << form1 << std::endl;
-    std::cout << form2 << std::endl;
+    std::cout << AForm1 << std::endl;
+    std::cout << AForm2 << std::endl;
     
     return ;
 }
@@ -276,27 +276,27 @@ int main()
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "04 - Test Form Orthodox Canonical" << std::endl;
+        std::cout << "04 - Test AForm Orthodox Canonical" << std::endl;
         test04();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "05 - Test Form wrong values" << std::endl;
+        std::cout << "05 - Test AForm wrong values" << std::endl;
         test05();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "06 - Test Form methods" << std::endl;
+        std::cout << "06 - Test AForm methods" << std::endl;
         test06();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "07 - Test Form try beSigned()" << std::endl;
+        std::cout << "07 - Test AForm try beSigned()" << std::endl;
         test07();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "08 - Test Bureaucrat try signForm()" << std::endl;
+        std::cout << "08 - Test Bureaucrat try signAForm()" << std::endl;
         test08();
         std::cout << "\n" << std::endl;
     }
