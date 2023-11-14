@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:29:00 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/02 18:35:12 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:46:36 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class AForm
         void            beSigned( Bureaucrat &bureaucrat );
         virtual void    execute(Bureaucrat const & executor) const = 0;
 
+        void            setSigned( bool sign );
         class GradeTooHighException: public std::exception
         {
             public:

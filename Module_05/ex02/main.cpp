@@ -6,13 +6,14 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:41:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/02 16:35:36 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:55:25 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 void    test00( void )
 {
@@ -121,19 +122,24 @@ void    test03( void )
 
 void test04( void )
 {
-    AForm AForm00("AForm 42", 70, 80);
+    Bureaucrat carl("Carl", 1);
+    ShrubberyCreationForm shruberry00("help me");
     
+    carl.signForm(shruberry00);
     std::cout << "--- Copy constructor ---" << std::endl;
-    AForm AForm01 = AForm00;
+    ShrubberyCreationForm shruberry01 = shruberry00;
+    shruberry01.execute(carl);
     std::cout << std::endl;
 
     std::cout << "--- Copy assigment ---" << std::endl;
-    AForm AForm02;
-    AForm02 = AForm01;
+    ShrubberyCreationForm shruberry02;
+    shruberry02 = shruberry01;
+    shruberry02.execute(carl);
+    carl.signForm(shruberry02);
 
-    std::cout << AForm00 << std::endl;
-    std::cout << AForm01 << std::endl;
-    std::cout << AForm02 << std::endl;
+    std::cout << shruberry00 << std::endl;
+    std::cout << shruberry01 << std::endl;
+    std::cout << shruberry02 << std::endl;
 
     return ;
 }
@@ -142,116 +148,218 @@ void    test05( void )
 {
     try
     {
-        AForm AForm("AForm 42", 151, 1);
+        Bureaucrat carl("Carl0", 146);
+        ShrubberyCreationForm formSchrubbery("Farm");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        carl.signForm(formSchrubbery);
+        std::cout << "\n Execute Form \n" << std::endl;
+        carl.executeForm(formSchrubbery);
+        std::cout << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << std::endl;
+    
     try
     {
-        AForm AForm("AForm 24", 150, -1);
+        Bureaucrat carl("Carl1", 145);
+        ShrubberyCreationForm formSchrubbery("Farm");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        carl.signForm(formSchrubbery);
+        std::cout << "\n Execute Form \n" << std::endl;
+        carl.executeForm(formSchrubbery);
+        std::cout << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << std::endl;
+    
+    try
+    {
+        Bureaucrat carl("Carl2", 137);
+        ShrubberyCreationForm formSchrubbery("Farm");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        carl.signForm(formSchrubbery);
+        std::cout << "\n Execute Form \n" << std::endl;
+        carl.executeForm(formSchrubbery);
+        std::cout << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << std::endl;
+
+    try
+    {
+        Bureaucrat carl("Carl3", 137);
+        Bureaucrat jarl("Jarl", 1);
+        ShrubberyCreationForm formSchrubbery("Farm");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        carl.signForm(formSchrubbery);
+        std::cout << "\n Sign Form (jarl)\n" << std::endl;
+        jarl.signForm(formSchrubbery);
+        carl.executeForm(formSchrubbery);
+        std::cout << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << std::endl;
+
     return ;
 }
 
 void    test06( void )
 {
-    Bureaucrat  bureaucrat("Carl", 1);
-    AForm        AForm("AForm 42", 1, 1);
-
-    AForm.beSigned(bureaucrat);
-    std::cout << AForm << std::endl;
+    Bureaucrat carl("Jarl", 1);
+    RobotomyRequestForm robotomy00("help me");
     
+    carl.signForm(robotomy00);
+    std::cout << "--- Copy constructor ---" << std::endl;
+    RobotomyRequestForm robotomy01 = robotomy00;
+    robotomy01.execute(carl);
+    std::cout << std::endl;
+
+    std::cout << "--- Copy assigment ---" << std::endl;
+    RobotomyRequestForm robotomy02;
+    robotomy02 = robotomy01;
+    robotomy02.execute(carl);
+    carl.signForm(robotomy02);
+
+    std::cout << robotomy00 << std::endl;
+    std::cout << robotomy01 << std::endl;
+    std::cout << robotomy02 << std::endl;
+
     return ;
 }
 
 void    test07( void )
 {
-    Bureaucrat  bureaucrat("Carl", 50);
-    AForm        AForm1("AForm 42", 51, 1);
-    AForm        AForm2("AForm 24", 50, 1);
-    AForm        AForm3("AForm 12", 1, 1);
+try
+    {
+        Bureaucrat rarl("Rarl0", 73);
+        RobotomyRequestForm formRobotomy("Maybe");
 
-    try
-    {
-        AForm1.beSigned(bureaucrat);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << "AFormm 42 failed: " << e.what() << '\n';
-    }
-    
-    try
-    {
-        AForm2.beSigned(bureaucrat);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << "AFormm 24 failed: " << e.what() << '\n';
-    }
-    
-    try
-    {
-        AForm3.beSigned(bureaucrat);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << "AFormm 12 failed: " << e.what() << '\n';
-    }
-    
-    std::cout << AForm1 << std::endl;
-    std::cout << AForm2 << std::endl;
-    std::cout << AForm3 << std::endl;
-    
-    return ;
-}
-
-void    test08( void )
-{
-    Bureaucrat  bureaucrat1("Carl", 50);
-    Bureaucrat  bureaucrat2("Larl", 1);
-    AForm        AForm1("AForm 42", 50, 1);
-    AForm        AForm2("AForm 24", 1, 1);
-
-    try
-    {
-        bureaucrat1.signForm(AForm1);
+        std::cout << "\n Sign Form \n" << std::endl;
+        rarl.signForm(formRobotomy);
+        std::cout << "\n Execute Form \n" << std::endl;
+        rarl.executeForm(formRobotomy);
+        std::cout << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-
-    try
-    {
-        bureaucrat1.signForm(AForm2);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    try
-    {
-        bureaucrat2.signForm(AForm1);
-
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
     std::cout << std::endl;
-    std::cout << AForm1 << std::endl;
-    std::cout << AForm2 << std::endl;
     
+    try
+    {
+        Bureaucrat rarl("Rarl1", 72);
+        RobotomyRequestForm formRobotomy("Maybe");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        rarl.signForm(formRobotomy);
+        std::cout << "\n Execute Form \n" << std::endl;
+        rarl.executeForm(formRobotomy);
+        std::cout << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << std::endl;
+    
+    try
+    {
+        Bureaucrat rarl("Rarl2", 45);
+        RobotomyRequestForm formRobotomy("Maybe");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        rarl.signForm(formRobotomy);
+        std::cout << "\n Execute Form \n" << std::endl;
+        rarl.executeForm(formRobotomy);
+        std::cout << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << std::endl;
+
+    try
+    {
+        Bureaucrat rarl("Rarl3", 45);
+        Bureaucrat jarl("Jarl", 1);
+        RobotomyRequestForm formRobotomy("Maybe");
+
+        std::cout << "\n Sign Form \n" << std::endl;
+        rarl.signForm(formRobotomy);
+        std::cout << "\n Sign Form (Jarl)\n" << std::endl;
+        jarl.signForm(formRobotomy);
+        rarl.executeForm(formRobotomy);
+        jarl.executeForm(formRobotomy);
+        std::cout << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << std::endl;
+
     return ;
 }
+
+// void    test08( void )
+// {
+//     Bureaucrat  bureaucrat1("Carl", 50);
+//     Bureaucrat  bureaucrat2("Larl", 1);
+//     AForm        AForm1("AForm 42", 50, 1);
+//     AForm        AForm2("AForm 24", 1, 1);
+
+//     try
+//     {
+//         bureaucrat1.signForm(AForm1);
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+
+//     try
+//     {
+//         bureaucrat1.signForm(AForm2);
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+
+//     try
+//     {
+//         bureaucrat2.signForm(AForm1);
+
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+    
+//     std::cout << std::endl;
+//     std::cout << AForm1 << std::endl;
+//     std::cout << AForm2 << std::endl;
+    
+//     return ;
+// }
 
 int main()
 {
@@ -276,28 +384,28 @@ int main()
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "04 - Test AForm Orthodox Canonical" << std::endl;
+        std::cout << "04.1 - Test ShruberryCreationForm Orthodox Canonical" << std::endl;
         test04();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "05 - Test AForm wrong values" << std::endl;
+        std::cout << "05.1 - Test ShruberryCreationForm values" << std::endl;
         test05();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "06 - Test AForm methods" << std::endl;
+        std::cout << "06.1 - Test RobotomyRequestForm Orthodox Canonical" << std::endl;
         test06();
         std::cout << "\n" << std::endl;
     }
     {
-        std::cout << "07 - Test AForm try beSigned()" << std::endl;
+        std::cout << "07.1 - Test RobotomyRequestForm values" << std::endl;
         test07();
         std::cout << "\n" << std::endl;
     }
-    {
-        std::cout << "08 - Test Bureaucrat try signAForm()" << std::endl;
-        test08();
-        std::cout << "\n" << std::endl;
-    }
+    // {
+    //     std::cout << "08 - Test Bureaucrat try signAForm()" << std::endl;
+    //     test08();
+    //     std::cout << "\n" << std::endl;
+    // }
 }

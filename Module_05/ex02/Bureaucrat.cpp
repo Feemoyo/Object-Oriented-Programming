@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:02:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/02 16:35:55 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:52:01 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat &other ): _name(other._name), _grade(ot
     return ;
 }
 
-Bureaucrat &Bureaucrat::operator = ( const Bureaucrat &other )
+Bureaucrat &Bureaucrat::operator=( const Bureaucrat &other )
 {
     std::cout << "~Copy assigment Bureaucrat called" << std::endl;
     if (this == &other)
@@ -97,6 +97,20 @@ void                Bureaucrat::signForm( AForm &form )
     catch(const std::exception& e)
     {
         std::cerr << this->_name << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    return ;
+}
+
+void                Bureaucrat::executeForm( AForm const & form ) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->_name << " executes " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->_name << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
     }
     return ;
 }

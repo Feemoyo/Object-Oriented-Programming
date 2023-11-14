@@ -92,6 +92,12 @@ void    AForm::execute(Bureaucrat const & executor) const
     return ;
 }
 
+void    AForm::setSigned( bool sign )
+{
+    this->_signed = sign;
+    return ;
+}
+
 const char *AForm::GradeTooHighException::what() const throw()
 {
     return ("Grade too high");
