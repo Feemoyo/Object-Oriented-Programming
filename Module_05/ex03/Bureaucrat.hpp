@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:54:06 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 09:36:18 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:31:11 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ class Bureaucrat
 				virtual const char* what() const throw();
 		};
 		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class FormDoesNotExistException: public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

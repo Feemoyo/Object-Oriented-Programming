@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:58:46 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/03 10:32:51 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:32:08 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ static bool getOptions(PhoneBook *phonebook)
     {
         std::cout << "\nInvalid option\n"
                   << std::endl;
-                  
     }
     return (true);
 }

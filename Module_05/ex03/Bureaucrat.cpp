@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:02:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 12:02:10 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:32:01 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,11 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Grade too low");
+}
+
+const char *Bureaucrat::FormDoesNotExistException::what() const throw()
+{
+    return ("Form does not exist");
 }
 
 std::ostream& operator<<(std::ostream& rhs, const Bureaucrat &lhs){

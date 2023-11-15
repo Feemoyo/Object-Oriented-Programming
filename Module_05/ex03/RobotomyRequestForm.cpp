@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:53:02 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 14:11:09 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/15 12:49:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const std::string target ): AForm("RobotomyRequestForm", 72, 45), _target(target)
-{
+ RobotomyRequestForm::RobotomyRequestForm( const std::string target ): AForm("RobotomyRequestForm", 72, 45), _target(target)
+ {
 	std::cout << "~RobotomyRequestForm Constructor called!" << std::endl;
 	return ;
-}
+ }
 
 std::string RobotomyRequestForm::getTarget( void ) const
 {

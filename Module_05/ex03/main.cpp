@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:41:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 11:59:10 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:07:37 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 void    test00( void )
 {
@@ -149,13 +150,13 @@ void    test05( void )
 {
     try
     {
-        Bureaucrat carl("Sarl0", 146);
+        Bureaucrat sarl("Sarl0", 146);
         ShrubberyCreationForm formSchrubbery("Farm");
 
         std::cout << "\n Sign Form \n" << std::endl;
-        carl.signForm(formSchrubbery);
+        sarl.signForm(formSchrubbery);
         std::cout << "\n Execute Form \n" << std::endl;
-        carl.executeForm(formSchrubbery);
+        sarl.executeForm(formSchrubbery);
         std::cout << std::endl;
     }
     catch(const std::exception& e)
@@ -166,13 +167,13 @@ void    test05( void )
     
     try
     {
-        Bureaucrat carl("Sarl1", 145);
+        Bureaucrat sarl("Sarl1", 145);
         ShrubberyCreationForm formSchrubbery("Farm");
 
         std::cout << "\n Sign Form \n" << std::endl;
-        carl.signForm(formSchrubbery);
+        sarl.signForm(formSchrubbery);
         std::cout << "\n Execute Form \n" << std::endl;
-        carl.executeForm(formSchrubbery);
+        sarl.executeForm(formSchrubbery);
         std::cout << std::endl;
     }
     catch(const std::exception& e)
@@ -183,13 +184,13 @@ void    test05( void )
     
     try
     {
-        Bureaucrat carl("Sarl2", 137);
+        Bureaucrat sarl("Sarl2", 137);
         ShrubberyCreationForm formSchrubbery("Farm");
 
         std::cout << "\n Sign Form \n" << std::endl;
-        carl.signForm(formSchrubbery);
+        sarl.signForm(formSchrubbery);
         std::cout << "\n Execute Form \n" << std::endl;
-        carl.executeForm(formSchrubbery);
+        sarl.executeForm(formSchrubbery);
         std::cout << std::endl;
     }
     catch(const std::exception& e)
@@ -200,15 +201,15 @@ void    test05( void )
 
     try
     {
-        Bureaucrat carl("Sarl3", 137);
+        Bureaucrat sarl("Sarl3", 137);
         Bureaucrat jarl("Jarl", 1);
         ShrubberyCreationForm formSchrubbery("Farm");
 
         std::cout << "\n Sign Form \n" << std::endl;
-        carl.signForm(formSchrubbery);
+        sarl.signForm(formSchrubbery);
         std::cout << "\n Sign Form (jarl)\n" << std::endl;
         jarl.signForm(formSchrubbery);
-        carl.executeForm(formSchrubbery);
+        sarl.executeForm(formSchrubbery);
         std::cout << std::endl;
     }
     catch(const std::exception& e)
@@ -420,6 +421,74 @@ try
     return ;
 }
 
+void        test10( void )
+{
+    Intern  marvim;
+    
+    try
+    {
+        Bureaucrat sarl("Sarl", 136);
+        AForm *shrubbery = marvim.makeForm("shrubbery creation", "Bender");
+        sarl.signForm(*shrubbery);
+        sarl.executeForm(*shrubbery);
+        
+        if (shrubbery)
+            delete (shrubbery);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        Bureaucrat rarl("Rarl", 44);
+        AForm *robotomy = marvim.makeForm("robotomy request", "Bender");
+        rarl.signForm(*robotomy);
+        rarl.executeForm(*robotomy);
+
+        if (robotomy)
+            delete (robotomy);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        Bureaucrat parl("Parl", 44);
+        AForm *pardon = marvim.makeForm("presidential pardon", "Bender");
+        parl.signForm(*pardon);
+        parl.executeForm(*pardon);
+
+        if (pardon)
+            delete (pardon);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        Bureaucrat eofarl("eofarl", 44);
+        AForm *random = marvim.makeForm("ablubblelbelble", "Bender");
+        std::cout << "\n pointer aa " << random << std::endl;
+        eofarl.signForm(*random);
+        std::cout << "\n ate aqui NAO funfa \n" << std::endl;
+        eofarl.executeForm(*random);
+
+        if (random)
+            delete (random);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+}
+
 int main()
 {
     {
@@ -472,4 +541,10 @@ int main()
         test09();
         std::cout << "\n" << std::endl;
     }
+    {
+        std::cout << "10 - Test Intern" << std::endl;
+        test10();
+        std::cout << "\n" << std::endl;
+    }
+    return (0);
 }
