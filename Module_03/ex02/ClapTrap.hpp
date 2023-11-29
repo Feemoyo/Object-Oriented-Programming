@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 06:33:44 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/31 17:31:20 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:11:53 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
     int    _hitPoints;
     int    _energyPoints;
     unsigned int    _attackDamage;
-	
+
     unsigned int    _maxHP; 
 
     bool        _checkAction(void);

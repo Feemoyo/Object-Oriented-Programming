@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:34:30 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/30 22:35:13 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:55:08 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,6 +165,16 @@ void subjectEx01Test()
     }
 }
 
+void    testBrain()
+{
+    AAnimal *animal = new Cat();
+    Cat pepo;
+
+    *animal = pepo;
+    
+    delete animal;
+}
+
 int main()
 {
     {
@@ -205,6 +215,11 @@ int main()
     {
         std::cout << "07 - Subject ex01 test." << std::endl;
         subjectEx01Test();
+        std::cout << "\n" << std::endl; 
+    }
+    {
+        std::cout << "07 - Test Brain." << std::endl;
+        testBrain();
         std::cout << "\n" << std::endl; 
     }
 }
