@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:41:32 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 15:07:37 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:43:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -474,9 +474,7 @@ void        test10( void )
     {
         Bureaucrat eofarl("eofarl", 44);
         AForm *random = marvim.makeForm("ablubblelbelble", "Bender");
-        std::cout << "\n pointer aa " << random << std::endl;
         eofarl.signForm(*random);
-        std::cout << "\n ate aqui NAO funfa \n" << std::endl;
         eofarl.executeForm(*random);
 
         if (random)

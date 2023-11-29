@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:20:37 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 15:31:48 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:42:26 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ Intern &Intern::operator=( Intern const &other )
 
 AForm *Intern::makeForm( std::string name, std::string target )
 {
-	AForm *form;
-
-	if (name == "robotomy request")
-		form = new RobotomyRequestForm(target);
-	else if (name == "presidential pardon")
-		form = new PresidentialPardonForm(target);
-	else if (name == "shrubbery creation")
-		form = new ShrubberyCreationForm(target);
-	else
+	AForm *form[3] = {new RobotomyRequestForm(target), new PresidentialPardonForm(target), new ShrubberyCreationForm(target)};
+	int i = 0;
+	while (i < 3)
 	{
-		throw(Bureaucrat::FormDoesNotExistException());
-		return NULL;
+		if (form[i]->getName() == name)
+		{
+			std::cout << "Intern creates " << form[i]->getName() << " form."<< std::endl;
+			return (form[i]);
+		}
+		delete (form[i]);
+		i++;
 	}
-	std::cout << "Intern creates " << form->getName() << " form."<< std::endl;
-	return form;
+
+	throw (AForm::FormNotFoundException());
+	return (NULL);
 }

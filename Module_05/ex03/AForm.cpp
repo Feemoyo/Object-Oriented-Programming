@@ -113,6 +113,11 @@ const char *AForm::FormNotSignedException::what() const throw()
     return ("Form not signed");
 }
 
+const char *AForm::FormNotFoundException::what() const throw()
+{
+    return ("Form not found");
+}
+
 const char *AForm::FormSignedException::what() const throw()
 {
     return ("Form already signed");

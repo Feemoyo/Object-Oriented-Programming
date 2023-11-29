@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:29:00 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/15 14:51:23 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:41:59 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ class AForm
 			public:
 				const char* what() const throw();
 		};
+        
+        class FormNotFoundException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
 
 		class FormSignedException : public std::exception
 		{
