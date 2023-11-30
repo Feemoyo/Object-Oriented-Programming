@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:09:21 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/21 18:25:30 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:50:25 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,16 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
-static class ScalarConverter
+class ScalarConverter
 {
 	private:
-		std::string	_input;
-		int			_type;
-		int			_precision;
-		int			_flag;
-		
-		char		_char;
-		int			_int;
-		float		_float;
-		double		_double;
-
-		// void		_setType( void );
-		// void		_setPrecision( void );
-		// void		_setFlag( void );
-		// void		_setChar( void );
-		// void		_setInt( void );
-		// void		_setFloat( void );
-		// void		_setDouble( void );
+		static char			_char;
+		static int			_int;
+		static float		_float;
+		static double		_double;
 
 	public:
 		ScalarConverter( void );
@@ -42,13 +31,13 @@ static class ScalarConverter
 		ScalarConverter( ScalarConverter const &other );
 		ScalarConverter &operator=( ScalarConverter const &other );
 
-		ScalarConverter( const std::string input );
-		void 		convert( const std::string scalarType );
-		void		printChar( void ) const;
-		void		printInt( void ) const;
-		void		printFloat( void ) const;
-		void		printDouble( void ) const;
-		void		printAll( void ) const;
+		static void 	convert( const std::string input );
+		static void		castFromChar( void );
+		static void		castFromInt( void );
+		static void		castFromFloat( void );
+		static void		castFromDouble( void );
+		static void		impossibleCast( void );
+		static void		terminalOutput( void );
 };
 
 #endif

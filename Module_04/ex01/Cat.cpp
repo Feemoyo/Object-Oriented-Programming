@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:14:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/29 16:56:15 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:20:39 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat::~Cat()
 }
 
 Cat::Cat(const Cat &other) : Animal()
-{
+{ 
     std::cout << "~Cat copy constructor called." << std::endl;
     if (this->brain != NULL)
         delete(this->brain);
