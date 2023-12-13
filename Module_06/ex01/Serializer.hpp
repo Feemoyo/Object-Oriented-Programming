@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 15:25:36 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/02 11:08:07 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/12/09 13:40:49 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/12/12 17:36:05 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <stdint.h>
+#include "Data.hpp"
 
-class Dog : public Animal
-{
-private:
-    Brain *brain;
-
-public:
-    Dog(void);
-    ~Dog();
-    Dog(const Dog &other);
-    Dog &operator=(const Dog &other);
-    
-    void makeSound() const;
-    Brain &getBrain() const;
-
+class Serializer {
+	private:
+		Serializer( void );
+		Serializer( Serializer const & src );
+		~Serializer( void );
+		Serializer &	operator=( Serializer const & rhs );
+	
+	public:
+		static uintptr_t	serialize(Data* ptr);
+		static Data 		*deserialize( uintptr_t raw );
 };
 
 #endif

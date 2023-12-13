@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:25:36 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/10/26 17:08:49 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:48:50 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class Dog : public AAnimal
 {
+private:
     Brain *brain;
 public:
     Dog(void);

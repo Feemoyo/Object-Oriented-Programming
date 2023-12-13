@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 15:25:36 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/02 11:08:07 by fmoreira         ###   ########.fr       */
+/*   Created: 2023/12/09 13:39:49 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/12/12 17:27:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef DATA_HPP
+#define DATA_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Dog : public Animal
-{
-private:
-    Brain *brain;
-
-public:
-    Dog(void);
-    ~Dog();
-    Dog(const Dog &other);
-    Dog &operator=(const Dog &other);
-    
-    void makeSound() const;
-    Brain &getBrain() const;
-
+struct Data {
+	std::string name;
+	std::string lastName;
+	std::string nickname;
+	int 		age;
 };
 
 #endif

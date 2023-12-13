@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:14:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/29 15:54:21 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/02 08:00:25 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ Dog::Dog(const Dog &other) : AAnimal()
 {
     std::cout << "~Dog copy constructor called." << std::endl;
     this->type = other.getType();
-    if (this->brain != NULL)
-        delete(this->brain);
     this->brain = new Brain(other.getBrain());
     return ;
 }
