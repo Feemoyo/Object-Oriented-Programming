@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 07:21:43 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/16 11:20:53 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/16 11:28:34 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,21 @@ void identify(Base& p)
 
 int main()
 {
-	Base *base;
-
+	Base	*base[10];
+	int		i;
 	srand(time(NULL));
-	base = generate();
 
-	identify(base);
-	identify(*base);
-
-	delete(base);
+	for (i = 0; i < 10; i++)
+	{
+		base[i] = generate();
+		identify(base[i]);
+		identify(*base[i]);
+		std::cout << i << "\n" << std::endl;
+	}
+	
+	for (i = 0; i < 10; i++)
+	{
+		delete base[i];
+	}
 	return (0);
 }
