@@ -17,6 +17,7 @@
 int main( void )
 {
 	Data		*data = new Data;
+	Data		*posData;
 	uintptr_t	raw;
 	
 	data->name = "Felipe";
@@ -27,12 +28,12 @@ int main( void )
 	raw = Serializer::serialize(data);
 	std::cout << "Raw: " << raw << std::endl;
 
-	data = Serializer::deserialize(raw);
-	std::cout << "Name: " << data->name << std::endl;
-	std::cout << "Last Name: " << data->lastName << std::endl;
-	std::cout << "Nickname: " << data->nickname << std::endl;
-	std::cout << "Age: " << data->age << std::endl;
+	posData = Serializer::deserialize(raw);
+	std::cout << "Name: " << posData->name << std::endl;
+	std::cout << "Last Name: " << posData->lastName << std::endl;
+	std::cout << "Nickname: " << posData->nickname << std::endl;
+	std::cout << "Age: " << posData->age << std::endl;
 
-	delete data;
+	delete (data);
 	return (0);
 }

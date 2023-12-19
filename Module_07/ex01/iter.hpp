@@ -16,22 +16,62 @@
 #include <iostream>
 
 template <typename T>
-void	iter(T *array, size_t len, void (*func)(T const &))
+void	iter(T *array, size_t len, void (*func)(T &))
 {
 	for (size_t i = 0; i < len; i++)
 		func(array[i]);
 }
 
 template <typename T>
-void	printValue(T const &value)
+void	printValue(T &value)
 {
 	std::cout << value << std::endl;
 }
 
 template <typename T>
-void	doubleValue(T const &value)
+void	plusValue(T &value)
+{
+	value += 1;
+}
+
+template <>
+void	plusValue(std::string &value)
+{
+	std::cout << "Not possible with string" << std::endl;
+	(void)value;
+}
+
+template <typename T>
+void	minumValue(T &value)
+{
+	value -= 1;
+}
+
+template <>
+void	minumValue(std::string &value)
+{
+	std::cout << "Not possible with string" << std::endl;
+	(void)value;
+}
+
+template <typename T>
+void	doubleValue(T &value)
 {
 	value *= 2;
+}
+
+template <>
+void	doubleValue(std::string &value)
+{
+	std::cout << "Not possible with string" << std::endl;
+	(void)value;
+}
+
+template <>
+void	doubleValue(char &value)
+{
+	std::cout << "Unfeasible with char" << std::endl;
+	(void)value;
 }
 
 #endif
