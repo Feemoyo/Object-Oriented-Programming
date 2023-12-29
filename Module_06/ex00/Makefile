@@ -6,11 +6,11 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 15:27:37 by fmoreira          #+#    #+#              #
-#    Updated: 2023/11/14 11:37:12 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/12/29 16:25:15 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= a.out
+NAME		= convert
 
 SRC			= ${wildcard *.cpp}
 OBJ_PATH	= ./obj/
