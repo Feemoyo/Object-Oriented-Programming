@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:09:21 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/29 15:55:33 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:10:54 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ class ScalarConverter
 		ScalarConverter( ScalarConverter const &other );
 		ScalarConverter &operator=( ScalarConverter const &other );
 		
-	public:
-
-		static void 	convert( const std::string input );
 		static void		castFromChar( void );
 		static void		castFromInt( void );
 		static void		castFromFloat( void );
 		static void		castFromDouble( void );
 		static void		impossibleCast( void );
 		static void		terminalOutput( void );
+		
+	public:
+		static void 	convert( const std::string input );
 };
 
 #endif
