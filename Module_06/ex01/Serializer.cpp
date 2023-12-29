@@ -6,12 +6,11 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 13:48:30 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/12 18:14:13 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:51:17 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
-// #include <cstdint>
 
 Serializer::Serializer( void )
 {

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:08:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/30 14:51:57 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:48:00 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	ScalarConverter::convert( const std::string input )
 	char	*doubleChecker;
 
 	int		intValue = static_cast<int>(strtol(input.c_str(), &intChecker, 10));
-	float	floatValue = static_cast<float>(strtof(input.c_str(), &floatChecker));
-	double	doubleValue = static_cast<double>(strtod(input.c_str(), &doubleChecker));
+	float	floatValue = strtof(input.c_str(), &floatChecker);
+	double	doubleValue = strtod(input.c_str(), &doubleChecker);
 
 	if (input.length() == 1 && std::isalpha(input[0]))
 	{

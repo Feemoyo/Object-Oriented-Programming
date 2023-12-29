@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 08:16:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/11/30 10:48:01 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:55:49 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-	ScalarConverter converter;
 	if (argc < 2 || argc > 2)
 	{
 		std::cout << "Error: Invalid input\n" << std::endl;
@@ -23,7 +22,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		std::string str = argv[1];
-		converter.convert(str);
+		ScalarConverter::convert(str);
 		
 	}
 }
