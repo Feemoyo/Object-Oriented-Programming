@@ -6,11 +6,11 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:18:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/20 08:46:52 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/31 15:03:39 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.tpp"
+#include "Array.hpp"
 
 void	testIntArray00(void)
 {

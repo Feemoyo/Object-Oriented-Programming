@@ -6,17 +6,16 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 15:27:37 by fmoreira          #+#    #+#              #
-#    Updated: 2023/12/19 12:13:23 by fmoreira         ###   ########.fr        #
+#    Updated: 2023/11/14 11:37:12 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= a.out
 
 SRC			= ${wildcard *.cpp}
-TTP			= ${wildcard *.tpp}
 OBJ_PATH	= ./obj/
 
-OBJ 		= ${addprefix ${OBJ_PATH},${notdir ${SRC:.cpp=.o} ${TTP:.tpp=.o}}}
+OBJ			= ${addprefix ${OBJ_PATH}, ${notdir ${SRC:.cpp=.o}}}
 
 CXX			= c++
 
@@ -39,9 +38,6 @@ DEL			= rm -rf
 
 ${OBJ_PATH}%.o: %.cpp
 	${CXX} ${CXXFLAGS} -c $< -o $@
-
-${OBJ_PATH}%.o: %.tpp
-	${CXX} ${CXXFLAGS} -x c++ -c $< -o $@
 
 all: ${NAME}
 

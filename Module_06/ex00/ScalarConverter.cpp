@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:08:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/29 16:23:46 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/12/30 15:10:47 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,10 @@ void	ScalarConverter::terminalOutput( void )
 	{
 		std::cout << "char: Impossible" << std::endl;
 		if (ScalarConverter::_int <= -2147483648 || ScalarConverter::_int >= 2147483647)
+		{
 			std::cout << "int: Impossible" << std::endl;
+			
+		}
 		else
 			std::cout << "int: " << ScalarConverter::_int << std::endl;
 		std::cout << "float: " << ScalarConverter::_float << "f" << std::endl;
