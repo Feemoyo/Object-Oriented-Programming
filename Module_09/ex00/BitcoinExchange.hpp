@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/03 18:29:29 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:13:45 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 #include <exception>
 #include <map>
 #include <ctime>
@@ -36,6 +37,8 @@ class BitcoinExchange
 		BitcoinExchange(void);
 		bool	initFiles(std::string fileName);
 		bool	populateMap();
+		void	printMap();
+		std::string epochToDateString(size_t epoch);
 
 	public:
 		~BitcoinExchange(void);
