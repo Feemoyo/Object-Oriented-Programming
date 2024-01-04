@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:18:33 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/31 15:03:39 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:48:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	testIntArray00(void)
 	Array<int> intArray(5);
 
 	for (unsigned int i = 0; i < intArray.size(); i++)
-		intArray[i] = i;
+	{
+		const int random = rand();
+		intArray[i] = random;
+	}
 
 	for (unsigned int i = 0; i < intArray.size(); i++)
 		std::cout << intArray[i] << std::endl;
@@ -129,6 +132,7 @@ void	testOutOfLimitsArray07(void)
 
 int main(void)
 {
+	srand(time(NULL));
 	{
 		std::cout << "00 - Test int Array\n" << std::endl;
 		testIntArray00();

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 08:59:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2023/12/18 12:51:55 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:38:22 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 
 template <typename T>
 void	iter(T *array, size_t len, void (*func)(T &))
+{
+	for (size_t i = 0; i < len; i++)
+		func(array[i]);
+}
+
+template <typename T>
+void	iter(T *array, size_t len, void (*func)(T const &))
 {
 	for (size_t i = 0; i < len; i++)
 		func(array[i]);
