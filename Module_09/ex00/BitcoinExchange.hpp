@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/04 19:59:49 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:30:30 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <iomanip>
-#include <exception>
 #include <map>
-#include <ctime>
+#include <cstdlib>
+#include <algorithm>
 
 #define FIRSTDATA "data.csv"
 #define FIRSTHEADER "date,exchange_rate"
@@ -29,16 +30,20 @@
 class BitcoinExchange
 {
 	private:
-		std::map<time_t, float>	_map;
+		std::map<std::string, float>	_map;
 		
 		std::ifstream	_firstData;
 		std::ifstream	_secondData;
 
 		BitcoinExchange(void);
-		bool	initFiles(std::string fileName);
-		bool	populateMap();
-		void	printMap();
-		std::string epochToDateString(size_t epoch);
+		bool initFiles(std::string fileName);
+		bool populateMap();
+		void printMap();
+		void checkerInputFileData();
+		bool dateChecker(std::string &date);
+		bool isLeapYear(int year);
+		void inputTerminal(std::string key, float value);
+		
 
 	public:
 		~BitcoinExchange(void);
@@ -46,7 +51,7 @@ class BitcoinExchange
 		BitcoinExchange &operator=(BitcoinExchange const &other);
 
 		BitcoinExchange(std::string fileName);
-
+		
 
 		class FileError : public std::exception
 		{
