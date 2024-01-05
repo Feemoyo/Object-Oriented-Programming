@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:37 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/05 19:44:20 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:48:12 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ BitcoinExchange::BitcoinExchange(std::string fileName)
 {
 	if (!initFiles(fileName) || !populateMap())
 		throw (FileError());
-	this->checkerInputFileData();
+	this->execInputFileData();
 	// this->printMap();
 	return ;
 }
@@ -108,7 +108,7 @@ void	BitcoinExchange::printMap()
 	return ;
 }
 
-void	BitcoinExchange::checkerInputFileData()
+void	BitcoinExchange::execInputFileData()
 {
 	std::string line;
 

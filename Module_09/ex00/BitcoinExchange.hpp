@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/05 19:30:30 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:48:19 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class BitcoinExchange
 		bool initFiles(std::string fileName);
 		bool populateMap();
 		void printMap();
-		void checkerInputFileData();
+		void execInputFileData();
 		bool dateChecker(std::string &date);
 		bool isLeapYear(int year);
 		void inputTerminal(std::string key, float value);
