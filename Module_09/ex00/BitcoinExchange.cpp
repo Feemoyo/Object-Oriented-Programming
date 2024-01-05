@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:37 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/05 19:36:08 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:44:20 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ void	BitcoinExchange::checkerInputFileData()
 
 		if (std::getline(ss, dateStr, '|') && ss >> value)
 		{
-			if (!this->dateChecker(dateStr))
-				std::cout << "Error: bad input => " << dateStr << std::endl;
+			if (!this->dateChecker(dateStr) || ss.peek() != EOF)
+				std::cout << "Error: bad input => " << line << std::endl;
 			else if (value < 0)
 				std::cout << "Error: not a positive number." << std::endl;
 			else if (value > 1000)
