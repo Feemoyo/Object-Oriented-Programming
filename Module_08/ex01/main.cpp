@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:20:21 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/02 15:27:36 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:33:23 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int		main( void )
 	}
 	{
 		std::cout << "03 - Test with a lot of numbers\n" << std::endl;
-		// testWithALotNumbers();
+		testWithALotNumbers();
 		std::cout << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 09:27:20 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/02 15:22:43 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:32:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,15 @@ unsigned int	Span::shortestSpan( void )
 	{
 		std::vector<int> aux = this->_vec;
 		std::sort(aux.begin(), aux.end());
-		return (aux[1] - aux[0]);
+		int min = aux[1] - aux[0];
+
+		for (std::vector<int>::iterator it = aux.begin(); it != aux.end() - 1; it++)
+		{
+			if (min > *(it + 1) - *it)
+				min = *(it + 1) - *it;
+		}
+
+		return (min);
 	}
 }
 
