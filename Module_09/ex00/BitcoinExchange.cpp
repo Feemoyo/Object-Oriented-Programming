@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:12:37 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/05 19:48:12 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/05 21:14:31 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,9 @@ void BitcoinExchange::inputTerminal(std::string key, float value)
 
 	key.erase(std::remove_if(key.begin(), key.end(), ::isspace), key.end());
 	it = this->_map.upper_bound(key);
-	it--;
+	if (it != this->_map.begin())
+		it--;
+	
 	std::cout << key << " => " << value << " = " << value * (*it).second << std::endl;
+	return ;
 }
