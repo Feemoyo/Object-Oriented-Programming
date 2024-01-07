@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 20:02:09 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/06 10:03:12 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:32:39 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,3 @@ long unsigned int	RPN::checkToken(long unsigned int i)
 			throw (InvalidExpression());
 	}
 }
-
-
