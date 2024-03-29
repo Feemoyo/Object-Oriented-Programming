@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 08:59:41 by fmoreira          #+#    #+#             */
-/*   Updated: 2024/01/04 18:59:15 by fmoreira         ###   ########.fr       */
+/*   Updated: 2024/03/29 06:23:01 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ void	plusValue(T &value)
 	value += 1;
 }
 
+template <typename T>
+void	plusValue(const T &value)
+{
+	std::cout << "Not possible with const" << std::endl;
+	(void)value;
+}
+
 template <>
 void	plusValue(std::string &value)
 {
@@ -37,6 +44,13 @@ void	minumValue(T &value)
 	value -= 1;
 }
 
+template <typename T>
+void	minumValue(const T &value)
+{
+	std::cout << "Not possible with const" << std::endl;
+	(void)value;
+}
+
 template <>
 void	minumValue(std::string &value)
 {
@@ -48,6 +62,13 @@ template <typename T>
 void	doubleValue(T &value)
 {
 	value *= 2;
+}
+
+template <typename T>
+void	doubleValue(const T &value)
+{
+	std::cout << "Unfeasible with const" << std::endl;
+	(void)value;
 }
 
 template <>
@@ -66,7 +87,7 @@ void	doubleValue(char &value)
 
 void    intArray(void)
 {
-	int        arrayInt[5] = {1, 2, 3, 4, 5};
+	const int        arrayInt[5] = {1, 2, 3, 4, 5};
 	
 	std::cout << "intArray ::printValue" << std::endl;
 	::iter(arrayInt, 5, ::printValue);
